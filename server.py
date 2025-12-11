@@ -4,12 +4,8 @@ import os
 import json
 
 # --- CONFIGURAÇÃO DE CLIENTES ---
-CLIENTS = {
-    "Agro Baggio": "act_1013139725974649",  
-    "Duo": "act_480415702590045",
-    "Print": "act_1937907100108287",
-    # Adicione outros aqui
-}
+with open('clients.json', 'r', encoding='utf-8') as f:
+    CLIENTS = json.load(f)
 
 ACCESS_TOKEN = os.getenv("META_ACCESS_TOKEN") 
 BASE_URL = "https://graph.facebook.com/v21.0"
