@@ -4,8 +4,16 @@ import os
 import json
 
 # --- CONFIGURAÇÃO DE CLIENTES ---
-with open('clients.json', 'r', encoding='utf-8') as f:
-    CLIENTS = json.load(f)
+# Pega o caminho absoluto da pasta onde este script (server.py) está
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CLIENTS_FILE = os.path.join(BASE_DIR, 'clients.json')
+
+try:
+    with open(CLIENTS_FILE, 'r', encoding='utf-8') as f:
+        CLIENTS = json.load(f)
+except FileNotFoundError:
+    # Se der erro, mostra onde ele tentou procurar (ajuda no debug)
+    raise FileNotFoundError(f"Arquivo não encontrado no caminho: {CLIENTS_FILE}")
 
 ACCESS_TOKEN = os.getenv("META_ACCESS_TOKEN") 
 BASE_URL = "https://graph.facebook.com/v21.0"
