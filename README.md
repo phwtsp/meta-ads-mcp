@@ -95,4 +95,4 @@ This project handles sensitive access tokens.
 
 ## 📄 License
 
-[Insert License, e.g., MIT]
+This project is licensed under the MIT License.
