@@ -210,3 +210,4 @@ __marimo__/
 clients.json
 .DS_Store
 .cursor/
+perplexity_meta_mcp.json
