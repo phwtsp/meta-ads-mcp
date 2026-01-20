@@ -208,3 +208,5 @@ __marimo__/
 
 .env
 clients.json
+.DS_Store
+.cursor/
